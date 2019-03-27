@@ -1,5 +1,96 @@
+@import url("https://fonts.googleapis.com/css?family=PT+Sans:700");
+@import "_variables";
+
+@import "_timer";
+
 body {
+  font-family: "PT Sans", sans-serif;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+p {
+  padding: 0.5rem;
+  margin: 0;
+}
+.container {
+  background-image: linear-gradient(
+    to top,
+    #e9b16e,
+    #eab46f,
+    #eab770,
+    #ebba71,
+    #ebbd72,
+    #ecc173,
+    #eec574,
+    #efc975,
+    #f1cf77,
+    #f2d579,
+    #f3db7b,
+    #f4e17d
+  );
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem;
+  max-width: 100%;
+}
+
+.section {
+  background-color: colors(num-color);
+  padding: 2rem 3rem;
+  border-radius: 0.5rem;
+  border: 0.7rem solid white;
+}
+
+.header {
+  color: colors(accent);
+  border-radius: 0.5rem;
+  margin-top: -1rem;
+  margin-bottom: 5rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  &__title {
+    font-size: 1.4rem;
+    margin-right: 5rem;
+    letter-spacing: 2px;
+    font-weight: bold;
+  }
+  &__menu {
+    cursor: pointer;
+
+    & div {
+      height: 3px;
+      border-radius: 1rem;
+      margin-bottom: 0.4rem;
+      width: 2rem;
+      background-color: colors(accent);
+    }
+  }
+}
+
+.clock {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 1rem;
+
+  & .time {
+    font-size: 5rem;
+    color: colors(num-color);
+    background-color: colors(accent);
+    border-radius: 0.5rem;
+  }
+  .colon {
+    font-size: 1rem;
+    color: white;
+    opacity: 0.8;
+    font-size: 2rem;
+    margin: 0 0.5rem;
+  }
 }

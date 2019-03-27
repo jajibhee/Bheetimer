@@ -1,5 +1,9 @@
 $colors: (
   body: #f1d77a,
-  num-color: #d65745,
-  color: #ffffff
+  num-color: #d52122,
+  accent: #ffffff
 );
+
+@function colors($color) {
+  @return map-get($map: $colors, $key: $color);
+}
