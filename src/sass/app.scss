@@ -41,7 +41,7 @@ p {
 
 .section {
   background-color: colors(num-color);
-  padding: 2rem 3rem;
+  padding: 2rem 1rem;
   border-radius: 0.5rem;
   border: 0.7rem solid white;
 }
@@ -92,5 +92,21 @@ p {
     opacity: 0.8;
     font-size: 2rem;
     margin: 0 0.5rem;
+    animation: opacity 2s ease-in-out infinite;
+    opacity: 1;
+  }
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 }

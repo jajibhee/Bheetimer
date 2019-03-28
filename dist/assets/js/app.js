@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("\n\n//# sourceURL=webpack:///./src/js/app.js?");
+eval("// alert(\"I am in  bruv\");\nlet hour = document.querySelector(\"#hour\");\nlet minute = document.querySelector(\"#minute\");\n\nfunction setTime() {\n  var start = new Date();\n  let currentHour = start.getHours();\n  let currentMinute = start.getMinutes();\n\n  hour.innerHTML = currentHour;\n  minute.innerHTML = currentMinute;\n  console.log(start.getSeconds());\n}\n\nsetInterval(() => {\n  setTime();\n}, 1000);\n\n//# sourceURL=webpack:///./src/js/app.js?");
 
 /***/ })
 
