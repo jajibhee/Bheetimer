@@ -18,6 +18,11 @@
     esutils "^2.0.2"
     js-tokens "^4.0.0"
 
+"@glidejs/glide@^3.2.7":
+  version "3.2.7"
+  resolved "https://registry.yarnpkg.com/@glidejs/glide/-/glide-3.2.7.tgz#00511dacef58f371d4084d015dc8413bee352a7d"
+  integrity sha512-ufsSwK2gZUg+DePAe77RG9OYEW5scRHVNMimqahSxZu7SvMqAs1SFiB0+gln1BqEnaXXgjgoDhcjwA8eyleXDA==
+
 "@gulp-sourcemaps/identity-map@1.X":
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/@gulp-sourcemaps/identity-map/-/identity-map-1.0.2.tgz#1e6fe5d8027b1f285dc0d31762f566bccd73d5a9"

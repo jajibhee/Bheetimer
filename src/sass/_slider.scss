@@ -1,0 +1,22 @@
+.glide-container {
+  max-width: 100%;
+  overflow: hidden;
+
+  .glide {
+    width: 100%;
+    .glide__slide {
+      border: 4px solid rgba(colors(accent), 0.5);
+      height: auto;
+      padding: 0.5rem 0.75rem;
+      border-radius: 4px;
+      text-align: center;
+
+      &--active {
+        border-color: #ffffff;
+        background-color: #ffffff;
+        color: colors(primary);
+      }
+    }
+    color: rgba(#ffffff, 0.75);
+  }
+}

@@ -1,7 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=PT+Sans:700");
-@import "_variables";
 
+@import "./glide.core.min";
+@import "./glide.theme.min";
+@import "_variables";
 @import "_timer";
+@import "_slider";
+@import "_controls";
 
 body {
   font-family: "PT Sans", sans-serif;
@@ -36,19 +40,21 @@ p {
   justify-content: center;
   align-items: center;
   padding: 5rem;
-  max-width: 100%;
+  // max-width: 100%;
 }
 
 .section {
-  background-color: colors(num-color);
-  padding: 2rem 1rem;
+  background-color: colors(primary);
   border-radius: 0.5rem;
   border: 0.7rem solid white;
+  // width: 50%;
+  overflow: hidden;
 }
-
 .header {
-  color: colors(accent);
+  color: white;
   border-radius: 0.5rem;
+  padding: 2rem 1rem;
+
   margin-top: -1rem;
   margin-bottom: 5rem;
   display: flex;
@@ -69,7 +75,7 @@ p {
       border-radius: 1rem;
       margin-bottom: 0.4rem;
       width: 2rem;
-      background-color: colors(accent);
+      background-color: white;
     }
   }
 }
@@ -77,13 +83,16 @@ p {
 .clock {
   display: flex;
   justify-content: space-around;
+
+  padding: 2rem 1rem;
+
   align-items: center;
   margin: 0 1rem;
 
   & .time {
     font-size: 5rem;
-    color: colors(num-color);
-    background-color: colors(accent);
+    color: colors(primary);
+    background-color: white;
     border-radius: 0.5rem;
   }
   .colon {
