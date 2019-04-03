@@ -22,35 +22,38 @@ let sec = 0;
 let min = 0;
 let id;
 
+// STATE
+let isCounting = false;
+
 //play
 pause.addEventListener("click", () => {
+  isCounting = !isCounting;
   imgPause.classList.toggle("clicked");
-  //if it has already been initialized, dont do it again.
-  if (!id) {
-    id = setInterval(timer, 1000);
+
+  if (isCounting) {
+    //if it has already been initialized, dont do it again.
+
+    id = setInterval(timer, 100);
+  } else {
+    clearInterval(id);
   }
 });
 
 function timer() {
-  s.innerHTML = ("0" + sec).slice(-2);
-  m.innerHTML = ("0" + min).slice(-2);
-  if (sec == 59) {
+  sec++;
+  if (sec === 60) {
     sec = 0;
     min++;
-  } else {
-    sec++;
   }
+  s.innerHTML = ("0" + sec).slice(-2);
+  m.innerHTML = ("0" + min).slice(-2);
 }
 
 //stop will reset the timer.
 stop.addEventListener("click", () => {
   clearInterval(id);
-  //once its stopped, set the id back to false
-  id = false;
   sec = 0;
   min = 0;
   s.innerHTML = ("0" + sec).slice(-2);
   m.innerHTML = ("0" + min).slice(-2);
 });
-
-//alternating pause
