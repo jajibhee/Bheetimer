@@ -22,10 +22,10 @@ html(lang="en")
               div
           .clock
             .time
-              p#hour
+              p#minute 00
             .colon :
             .time
-              p#minute
+              p#seconds 00
           div.glide-container
             <div class="glide">
               <div class="glide__track" data-glide-el="track">
@@ -47,8 +47,10 @@ html(lang="en")
             </div>
           .controls
             .radial-bar
-            .pause
-              img(class="pause__img" src="assets/img/play.svg", alt="pause")
+              .pause
+                img(class="pause__img" src="assets/img/play.svg", alt="pause")
+              .stop
+                img(class="stop__img" src="assets/img/stop.svg", alt="stop")
           .tracker
             .round
               p 0/4

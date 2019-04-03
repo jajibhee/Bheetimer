@@ -1,32 +1,6 @@
-// alert("I am in  bruv");
 import "@glidejs/glide/dist/glide.min.js";
 
-let hour = document.querySelector("#hour");
-let minute = document.querySelector("#minute");
-let controls = document.querySelector(".pause");
-let imgPause = document.querySelector(".pause__img");
-
-function setTime() {
-  var start = new Date();
-  let currentHour = start.getHours();
-  let currentMinute = start.getMinutes();
-
-  // if (currentHour.length <= 1) {
-  //   currentHour = "0" + currentHour;
-  // }
-  // if (currentMinute.length <= 1) {
-  //   currentMinute = "0" + currentMinute;
-  // }
-  hour.innerHTML = ("0" + currentHour).slice(-2);
-  minute.innerHTML = ("0" + currentMinute).slice(-2);
-  // console.log(start.getSeconds());
-}
-
-setInterval(() => {
-  setTime();
-}, 1000);
-
-//GLIDE
+//GLIDEjs
 const glide = new Glide(".glide", {
   type: "slider",
   gap: "10px",
@@ -36,7 +10,47 @@ const glide = new Glide(".glide", {
 
 glide.mount();
 
+//counter
+let m = document.querySelector("#minute");
+let s = document.querySelector("#seconds");
+let pause = document.querySelector(".pause");
+let stop = document.querySelector(".stop");
+let imgPause = document.querySelector(".pause__img");
 //PAUSE BUTTON
-controls.addEventListener("click", () => {
+
+let sec = 0;
+let min = 0;
+let id;
+
+//play
+pause.addEventListener("click", () => {
   imgPause.classList.toggle("clicked");
+  //if it has already been initialized, dont do it again.
+  if (!id) {
+    id = setInterval(timer, 1000);
+  }
 });
+
+function timer() {
+  s.innerHTML = ("0" + sec).slice(-2);
+  m.innerHTML = ("0" + min).slice(-2);
+  if (sec == 59) {
+    sec = 0;
+    min++;
+  } else {
+    sec++;
+  }
+}
+
+//stop will reset the timer.
+stop.addEventListener("click", () => {
+  clearInterval(id);
+  //once its stopped, set the id back to false
+  id = false;
+  sec = 0;
+  min = 0;
+  s.innerHTML = ("0" + sec).slice(-2);
+  m.innerHTML = ("0" + min).slice(-2);
+});
+
+//alternating pause
