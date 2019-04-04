@@ -1,22 +1,23 @@
-.glide-container {
-  max-width: 100%;
+body {
+  width: 100%;
   overflow: hidden;
+}
+.swiper-slide {
+  box-sizing: border-box;
+  height: max-content;
+  padding: 0.25rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(244, 244, 244);
+  border: 2px solid white;
+  border-radius: 0.2rem;
+  text-align: center;
+  font-size: 1.5rem;
+  // margin-right: 10rem;
 
-  .glide {
-    width: 100%;
-    .glide__slide {
-      border: 4px solid rgba(colors(accent), 0.5);
-      height: auto;
-      padding: 0.5rem 0.75rem;
-      border-radius: 4px;
-      text-align: center;
-
-      &--active {
-        border-color: #ffffff;
-        background-color: #ffffff;
-        color: colors(primary);
-      }
-    }
-    color: rgba(#ffffff, 0.75);
+  &-active {
+    background-color: #fff;
+    color: colors(primary);
   }
 }

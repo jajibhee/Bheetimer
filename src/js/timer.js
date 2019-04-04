@@ -15,54 +15,63 @@
 //   setTime();
 // }, 1000);
 
-window.onload = function() {
-  var seconds = 00;
-  var tens = 00;
-  var appendTens = document.getElementById("tens");
-  var appendSeconds = document.getElementById("seconds");
-  var buttonStart = document.getElementById("button-start");
-  var buttonStop = document.getElementById("button-stop");
-  var buttonReset = document.getElementById("button-reset");
-  var Interval;
+import "@glidejs/glide/dist/glide.min.js";
 
-  buttonStart.onclick = function() {
-    clearInterval(Interval);
-    Interval = setInterval(startTimer, 10);
-  };
+//variables
+let m = document.querySelector("#minute");
+let s = document.querySelector("#seconds");
+let pause = document.querySelector(".pause");
+let stop = document.querySelector(".stop");
+let imgPause = document.querySelector(".pause__img");
 
-  buttonStop.onclick = function() {
-    clearInterval(Interval);
-  };
+let sec = 0;
+let min = 0;
+let id;
 
-  buttonReset.onclick = function() {
-    clearInterval(Interval);
-    tens = "00";
-    seconds = "00";
-    appendTens.innerHTML = tens;
-    appendSeconds.innerHTML = seconds;
-  };
+// STATE to track the counter.
+let isCounting = false;
 
-  function startTimer() {
-    tens++;
+//Pause and Play button
+pause.addEventListener("click", () => {
+  isCounting = !isCounting;
+  imgPause.classList.toggle("clicked");
 
-    if (tens < 9) {
-      appendTens.innerHTML = "0" + tens;
-    }
-
-    if (tens > 9) {
-      appendTens.innerHTML = tens;
-    }
-
-    if (tens > 99) {
-      console.log("seconds");
-      seconds++;
-      appendSeconds.innerHTML = "0" + seconds;
-      tens = 0;
-      appendTens.innerHTML = "0" + 0;
-    }
-
-    if (seconds > 9) {
-      appendSeconds.innerHTML = seconds;
-    }
+  if (isCounting) {
+    id = setInterval(timer, 100);
+  } else {
+    clearInterval(id);
   }
-};
+});
+
+function timer() {
+  sec++;
+  if (sec === 60) {
+    sec = 0;
+    min++;
+  }
+  s.innerHTML = ("0" + sec).slice(-2);
+  m.innerHTML = ("0" + min).slice(-2);
+}
+
+//Stop button
+stop.addEventListener("click", () => {
+  clearInterval(id);
+  //need to set the value back to false.
+  isCounting = false;
+  sec = 0;
+  min = 0;
+  s.innerHTML = ("0" + sec).slice(-2);
+  m.innerHTML = ("0" + min).slice(-2);
+});
+
+//GLIDEjs
+const glide = new Glide(".glide", {
+  type: "slider",
+  gap: "10px",
+  startAt: 0,
+  perView: 4.5
+});
+
+glide.mount();
+
+//setting a timer.
