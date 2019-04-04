@@ -9,8 +9,13 @@ var mySwiper = new Swiper(".swiper-container", {
   centeredSlides: true,
   slideToClickedSlide: true,
   slidesOffsetBefore: 0,
-  slidesOffsetAfter: 0,
-  grabCursor: true
+  grabCursor: true,
+  slidesOffsetAfter: 0
 });
 
-mySwiper.on("click", () => console.log("slide changed"));
+let currentSlide;
+//grabbing the value
+mySwiper.on("click", () => {
+  currentSlide = mySwiper.slides[mySwiper.activeIndex].innerHTML;
+  console.log(currentSlide);
+});
