@@ -11,8 +11,6 @@ var mySwiper = new Swiper(".swiper-container", {
   slidesOffsetBefore: 0,
   slidesOffsetAfter: 0,
   grabCursor: true
-  // centerInsufficientSlides: true
 });
 
 mySwiper.on("click", () => console.log("slide changed"));
-// mySwiper.isBeginning(false);

@@ -142,7 +142,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sli
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ \"./node_modules/swiper/dist/js/swiper.esm.bundle.js\");\n\n\nvar mySwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__[\"default\"](\".swiper-container\", {\n  slidesPerView: 5,\n  spaceBetween: 10,\n  pagination: {\n    clickable: true\n  },\n  centeredSlides: true,\n  slideToClickedSlide: true,\n  slidesOffsetBefore: 0,\n  slidesOffsetAfter: 0,\n  grabCursor: true\n  // centerInsufficientSlides: true\n});\n\nmySwiper.on(\"click\", () => console.log(\"slide changed\"));\n// mySwiper.isBeginning(false);\n\n//# sourceURL=webpack:///./src/js/slider.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ \"./node_modules/swiper/dist/js/swiper.esm.bundle.js\");\n\n\nvar mySwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__[\"default\"](\".swiper-container\", {\n  slidesPerView: 5,\n  spaceBetween: 10,\n  pagination: {\n    clickable: true\n  },\n  centeredSlides: true,\n  slideToClickedSlide: true,\n  slidesOffsetBefore: 0,\n  slidesOffsetAfter: 0,\n  grabCursor: true\n});\n\nmySwiper.on(\"click\", () => console.log(\"slide changed\"));\n\n//# sourceURL=webpack:///./src/js/slider.js?");
 
 /***/ })
 
