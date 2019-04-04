@@ -45,3 +45,5 @@ stop.addEventListener("click", () => {
   s.innerHTML = ("0" + sec).slice(-2);
   m.innerHTML = ("0" + min).slice(-2);
 });
+
+//Using the time slider
