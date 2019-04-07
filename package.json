@@ -10,9 +10,9 @@
     "swiper": "^4.5.0"
   },
   "scripts": {
+    "deploy": "gh-pages -d dist",
     "setup": "make setup && make generate-foundation-settings",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "gh-pages-d dist",
     "start": "make start"
   },
   "devDependencies": {
