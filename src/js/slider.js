@@ -1,5 +1,4 @@
 import Swiper from "swiper";
-
 var mySwiper = new Swiper(".swiper-container", {
   slidesPerView: 5,
   spaceBetween: 10,
@@ -17,5 +16,7 @@ let currentSlide;
 //grabbing the value
 mySwiper.on("click", () => {
   currentSlide = mySwiper.slides[mySwiper.activeIndex].innerHTML;
+
   console.log(currentSlide);
+  timer(0, parseInt(currentSlide, 10));
 });
