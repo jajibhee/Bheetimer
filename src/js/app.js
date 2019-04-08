@@ -13,7 +13,8 @@ var mySwiper = new Swiper(".swiper-container", {
   grabCursor: true,
   slidesOffsetAfter: 0
 });
-
+let user = prompt("Please enter your name").toUpperCase();
+console.log(user);
 let currentSlide;
 //grabbing the value
 mySwiper.on("click", () => {
@@ -31,13 +32,15 @@ let pause = document.querySelector(".pause");
 let stop = document.querySelector(".stop");
 let imgPause = document.querySelector(".pause__img");
 let round = document.querySelector(".tracker .round p");
+let goal = document.querySelector(".tracker .goal p");
 //turn it into an array
 let roundy = round.innerHTML.split("");
+let goaly = round.innerHTML.split("");
 console.log(roundy);
 
 //convert roundy into a number
 let numRound = Number(roundy[0]);
-
+let numGoal = Number(goaly[0]);
 let id;
 // STATE to track the counter.
 let isCounting = false;
@@ -49,7 +52,7 @@ pause.addEventListener("click", () => {
   imgPause.classList.toggle("clicked");
 
   if (isCounting) {
-    id = setInterval(timer, 999);
+    id = setInterval(timer, 9);
   } else {
     clearInterval(id);
   }
@@ -65,9 +68,16 @@ function timer() {
     imgPause.classList.toggle("clicked");
 
     numRound++;
+
     if (numRound > 4) {
       numRound = "0";
+      numGoal++;
       round.innerHTML = numRound + "/4";
+      goal.innerHTML = numGoal + "/3";
+    }
+    if (numRound == 4 && numGoal == 3) {
+      round.innerHTML = "CONGRATULATIONS";
+      goal.innerHTML = user;
     } else {
       round.innerHTML = numRound + "/4";
     }
@@ -89,6 +99,10 @@ stop.addEventListener("click", () => {
   if (imgPause.classList.contains("clicked")) {
     imgPause.classList.remove("clicked");
   }
+  numRound = "0";
+  numGoal = "0";
+  goal.innerHTML = numGoal + "/3";
+  round.innerHTML = numRound + "/4";
 
   s.innerHTML = "00";
   m.innerHTML = "00";
