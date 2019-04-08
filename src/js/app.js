@@ -19,6 +19,7 @@ let currentSlide;
 mySwiper.on("click", () => {
   currentSlide = mySwiper.slides[mySwiper.activeIndex].innerHTML;
   min = Number(currentSlide);
+  sec = 0;
   console.log(currentSlide);
   timer();
 });
@@ -29,6 +30,13 @@ let s = document.querySelector("#seconds");
 let pause = document.querySelector(".pause");
 let stop = document.querySelector(".stop");
 let imgPause = document.querySelector(".pause__img");
+let round = document.querySelector(".tracker .round p");
+//turn it into an array
+let roundy = round.innerHTML.split("");
+console.log(roundy);
+
+//convert roundy into a number
+let numRound = Number(roundy[0]);
 
 let id;
 // STATE to track the counter.
@@ -52,6 +60,17 @@ function timer() {
     clearInterval(id);
     s.innerHTML = "00";
     m.innerHTML = "00";
+    isCounting = false;
+
+    imgPause.classList.toggle("clicked");
+
+    numRound++;
+    if (numRound > 4) {
+      numRound = "0";
+      round.innerHTML = numRound + "/4";
+    } else {
+      round.innerHTML = numRound + "/4";
+    }
   } else if (sec === 0) {
     sec = 59;
     min--;
@@ -67,6 +86,10 @@ stop.addEventListener("click", () => {
   clearInterval(id);
   //need to set the value back to false.
   isCounting = false;
+  if (imgPause.classList.contains("clicked")) {
+    imgPause.classList.remove("clicked");
+  }
+
   s.innerHTML = "00";
   m.innerHTML = "00";
 });
