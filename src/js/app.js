@@ -33,6 +33,7 @@ let stop = document.querySelector(".stop");
 let imgPause = document.querySelector(".pause__img");
 let round = document.querySelector(".tracker .round p");
 let goal = document.querySelector(".tracker .goal p");
+let tracker = document.querySelectorAll(".tracker h4");
 //turn it into an array
 let roundy = round.innerHTML.split("");
 let goaly = round.innerHTML.split("");
@@ -76,6 +77,9 @@ function timer() {
       goal.innerHTML = numGoal + "/3";
     }
     if (numRound == 4 && numGoal == 3) {
+      tracker.forEach(item => {
+        item.style.display = "none";
+      });
       round.innerHTML = "CONGRATULATIONS";
       goal.innerHTML = user;
     } else {
@@ -109,3 +113,4 @@ stop.addEventListener("click", () => {
 });
 
 //Using the time slider
+//Fix the play to not count and also, mouseover events tomorrow.
