@@ -96,7 +96,7 @@ const run = () => {
   secEl.innerHTML === "00" ? (sec = 60) : null;
 
   if (isRunning) {
-    timer = setInterval(count, 0.1);
+    timer = setInterval(count, 999);
   } else {
     clearInterval(timer);
   }
