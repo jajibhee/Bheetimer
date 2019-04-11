@@ -10,7 +10,7 @@
   & .radial-bar {
     padding: 1rem;
 
-    & .pause,
+    & .play,
     .stop {
       display: inline-block;
       background-color: darken(colors(accent), 15);
@@ -55,4 +55,8 @@
 .clicked {
   content: url("../img/pause.svg");
   transition: opacity 3s ease-in-out;
+}
+
+audio {
+  visibility: hidden;
 }

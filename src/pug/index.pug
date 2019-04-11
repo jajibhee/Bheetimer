@@ -42,8 +42,8 @@ html(lang="en")
             </div>
           .controls
             .radial-bar
-              .pause
-                img(class="pause__img" src="assets/img/play.svg", alt="pause")
+              .play
+                img(class="play__img" src="assets/img/play.svg", alt="play")
               .stop
                 img(class="stop__img" src="assets/img/stop.svg", alt="stop")
           .tracker
@@ -53,6 +53,9 @@ html(lang="en")
             .goal
               p 0/3
               h4 GOAL
-
+          <audio id="audio" loop>
+            <source src="assets/download.ogg" type="audio/ogg">
+            <source src="assets/download.mp3" type="audio/mpeg">
+          </audio>
     script(src="assets/js/app.js")
             
